@@ -18,8 +18,9 @@ class Product(models.Model):
     description = models.CharField(max_length=64, verbose_name="description")
     image = models.ImageField(upload_to="media/catalog", verbose_name="image")
     price = models.IntegerField(verbose_name="price")
-    created = models.DateField(verbose_name="created", auto_now_add=True)
-    update = models.DateField(verbose_name="created", auto_now=True)
+    created_at = models.DateField(verbose_name="created", auto_now_add=True)
+    update_at = models.DateField(verbose_name="updated", auto_now=True)
+    manufactured_at = models.DateField(verbose_name="manufactured", auto_now_add=True)
 
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name="category")
 
